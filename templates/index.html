@@ -1,0 +1,84 @@
+{% extends "parent.html" %}
+{% load static %}
+
+<title> {% block title %} Welcome to Our Blog {% endblock %}</title>
+{% block content %}
+    <!---->
+    <div class="banner">
+         <div class="container">
+         </div>
+    </div>
+<!---->
+<div class="welcome">
+	 <div class="container">
+		 <div class="col-md-3 welcome-left">
+			 <h2>Welcome to my Blog</h2>
+		 </div>
+		 <div class="col-md-9 welcome-right">
+			 <h3>Why I started Blog?</h3>
+			 <p>Reason for starting a blog was to share my views on various topics.</p>
+		 </div>
+	 </div>
+</div>
+<!---->
+<div class="bride-grids">
+	 <div class="container">
+		 <div class="col-md-4 bride-grid">
+			 <div class="content-grid l-grids">
+				 <figure class="effect-bubba">
+						<img src="{% static 'images/b1.jpg' %}" alt=""/>
+						<figcaption>
+							<h4>My Blog Entries </h4>
+							<p><a href="#" >Click to see my blog entries</a></p>
+						</figcaption>
+				 </figure>
+				 <div class="clearfix"></div>
+				 <h3>Get Started With Our Blog</h3>
+			 </div>
+			 <div class="content-grid l-grids">
+				 <figure class="effect-bubba">
+						<img src="{% static 'images/b2.jpg' %}" alt=""/>
+						<figcaption>
+							<h4>Nullam molestie </h4>
+							<p>In sit amet sapien eros Integer in tincidunt labore et dolore magna aliqua</p>
+						</figcaption>
+				 </figure>
+				 <div class="clearfix"></div>
+				 <h3>Why should You start Your Blog?</h3>
+			 </div>
+		 </div>
+		 <div class="col-md-4 bride-grid">
+				<div class="content-grid l-grids">
+						<img src="{% static 'images/brid.jpg' %}" alt=""/>
+
+				 <h3>Popular Bloggers</h3>
+			 </div>
+		 </div>
+		 <div class="col-md-4 bride-grid">
+			 <div class="content-grid l-grids">
+				 <figure class="effect-bubba">
+						<img src="{% static 'images/b3.jpg' %}" alt=""/>
+						<figcaption>
+							<h4>Nullam molestie </h4>
+							<p>In sit amet sapien eros Integer in tincidunt labore et dolore magna aliqua</p>
+						</figcaption>
+				 </figure>
+				 <div class="clearfix"></div>
+				 <h3>Reviews about our Blog</h3>
+			 </div>
+			 <div class="content-grid l-grids">
+				 <figure class="effect-bubba">
+						<img src="{% static 'images/b4.jpg' %}" alt=""/>
+						<figcaption>
+							<h4>Nullam molestie </h4>
+							<p>In sit amet sapien eros Integer in tincidunt labore et dolore magna aliqua</p>
+						</figcaption>
+				 </figure>
+					<div class="clearfix"></div>
+				 <h3>Create your own blog today!</h3>
+			 </div>
+		 </div>
+		 <div class="clearfix"></div>
+	 </div>
+</div>
+{% endblock %}

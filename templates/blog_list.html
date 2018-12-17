@@ -1,0 +1,55 @@
+{% extends "userparent.html" %}
+{% load static %}
+
+<title> {% block title %}Blog Entries :: User Panel {% endblock %}</title>
+{% block content %}
+        <script type="text/javascript">
+            function todelete()
+            {
+                var answer=confirm("Do you really want to delete?")
+                if(answer)
+                {
+                    return true
+                }
+                else
+                {
+                    return false
+                }
+            }
+        </script>
+
+        <div class="container">
+	  <ol class="breadcrumb">
+		  <li><a href="index.html">Home</a></li>
+		  <li class="active">Account</li>
+		 </ol>
+	 <div class="registration">
+
+			 <h2>List of Blog Entries</h2>
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th>Title</th>
+                        <th>Body</th>
+                        <th>Date Time</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    {% for entry in entries %}
+                    <tr>
+                            <td>{{ entry.title }}</td>
+                            <td>{{ entry.blog_body }}</td>
+                            <td>{{ entry.datetimeofentry }}</td>
+                        <td><a href="{% url 'updateblog' entry.id %}"><img src="{% static 'images/updateicon.png' %}" width='20px'></a></td>
+                            <td><a onclick="return todelete()" href="{% url 'deleteblog' entry.id %}"><img src="{% static 'images/deleteicon.jpg' %}" width='20px'></a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+
+		 <div class="clearfix"></div>
+	 </div>
+</div>
+
+
+
+{% endblock %}

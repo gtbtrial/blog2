@@ -1,0 +1,141 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Wedding Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- start menu -->
+<script src="{% static 'js/simpleCart.min.js' %}"> </script>
+<!-- start menu -->
+<link href="{% static 'css/memenu.css' %}" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="{% static 'js/memenu.js' %}"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<!-- /start menu -->
+<script type="text/javascript">
+				 $(window).load(function() {
+				  $("#flexiselDemo1").flexisel({
+					visibleItems: 4,
+					animationSpeed: 1000,
+					autoPlay: true,
+					autoPlaySpeed: 3000,
+					pauseOnHover:true,
+					enableResponsiveBreakpoints: true,
+					responsiveBreakpoints: {
+						portrait: {
+							changePoint:480,
+							visibleItems: 1
+						},
+						landscape: {
+							changePoint:640,
+							visibleItems: 2
+						},
+						tablet: {
+							changePoint:768,
+							visibleItems: 3
+						}
+					}
+				});
+				});
+				</script>
+				<script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
+<title>
+    {% block title %} {% endblock %}
+
+</title>
+<div class="top_bg">
+	<div class="container">
+		<div class="header_top-sec">
+			<div class="top_right">
+
+			</div>
+			<div class="top_left">
+				<ul>
+					<li class="top_link">
+						{% if user.is_authenticated %}
+							Welcome {{ request.session.uname }}
+						{% endif %}
+						</li>|
+					<li class="top_link"><a href="{% url 'changepassword' %}">Change Password</a></li>
+					<li class="top_link"><a href="{% url 'meralogout' %}">Logout</a></li>
+				</ul>
+			</div>
+				<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<div class="header-top">
+	 <div class="header-bottom">
+		 <div class="container">
+				<div class="logo">
+					<a href="/"><h1>My Blog</h1></a>
+				</div>
+			 <!---->
+
+			 <div class="top-nav">
+				<ul class="memenu skyblue"><li class="active"><a href="{% url 'userpanel' %}">Home</a></li>
+					<li class="grid"><a href="{% url 'newblog' %}">New Blog</a>
+
+					</li>
+					<li class="grid"><a href="{% url 'bloglist' %}">Blog Entries</a>
+					</li>
+					<li class="grid"><a href="/new-registration">Update Profile</a></li>
+					<li class="grid"><a href="{% url 'meralogin' %}">Feedback</a></li>
+				</ul>
+				<div class="clearfix"> </div>
+			 </div>
+			 <!---->
+
+
+			 <!---->
+			 </div>
+			<div class="clearfix"> </div>
+	  </div>
+</div>
+</head>
+<!---->
+<body>
+
+        {% block content %}
+        {% endblock %}
+
+
+			<div class="footer">
+			 <div class="container">
+				 <div class="ftr-grids">
+					 <div class="col-md-3 ftr-grid">
+						 <h4>About Us</h4>
+
+					 </div>
+					 <div class="col-md-3 ftr-grid">
+						 <h4>Customer service</h4>
+
+					 </div>
+					 <div class="col-md-3 ftr-grid">
+						 <h4>Your account</h4>
+
+					 </div>
+
+					 <div class="clearfix"></div>
+				 </div>
+			 </div>
+		</div>
+		<!---->
+ 		<div class="copywrite">
+	 		<div class="container">
+				 <p>Copyright © 2018 MyBlog.com. All Rights Reserved | Design by GTB Computers</p>
+			 </div>
+		</div>
+
+</body>
+</html>

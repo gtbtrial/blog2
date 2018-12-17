@@ -1,0 +1,33 @@
+{% extends "userparent.html" %}
+{% load static %}
+
+<title> {% block title %} User Panel {% endblock %}</title>
+{% block content %}
+
+
+        <div class="container">
+	  <ol class="breadcrumb">
+		  <li><a href="index.html">Home</a></li>
+		  <li class="active">Account</li>
+		 </ol>
+	 <div class="registration">
+		 <div class="registration_left">
+			  {% for entry in entries %}
+			 		<h2 class="myheading">{{ entry.title }}</h2>
+			 		<span>{{entry.datetimeofentry }}</span><br><br>
+
+			 		<p>{{ entry.blog_body }}</p><br>
+			 		{% if entry.blogimage %}
+			 		<img src="{{ entry.blogimage.url }}" width="200px"><br>
+					{% endif %}
+			  {% endfor %}
+
+
+		 </div>
+
+		 <div class="clearfix"></div>
+	 </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,168 @@
+<!doctype html>
+{% load static %}
+{% load mytags %}
+<html lang="en">
+<head>
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Wedding Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- start menu -->
+<script src="{% static 'js/simpleCart.min.js' %}"> </script>
+<!-- start menu -->
+<link href="{% static 'css/memenu.css' %}" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="{% static 'js/memenu.js' %}"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<!-- /start menu -->
+<script type="text/javascript">
+				 $(window).load(function() {
+				  $("#flexiselDemo1").flexisel({
+					visibleItems: 4,
+					animationSpeed: 1000,
+					autoPlay: true,
+					autoPlaySpeed: 3000,
+					pauseOnHover:true,
+					enableResponsiveBreakpoints: true,
+					responsiveBreakpoints: {
+						portrait: {
+							changePoint:480,
+							visibleItems: 1
+						},
+						landscape: {
+							changePoint:640,
+							visibleItems: 2
+						},
+						tablet: {
+							changePoint:768,
+							visibleItems: 3
+						}
+					}
+				});
+				});
+				function startTime() {
+					  var today = new Date();
+					  var h = today.getHours();
+					  var m = today.getMinutes();
+					  var s = today.getSeconds();
+					  m = checkTime(m);
+					  s = checkTime(s);
+					  document.getElementById('txt').innerHTML =
+					  h + ":" + m + ":" + s;
+					  var t = setTimeout(startTime, 500);
+					}
+					function checkTime(i) {
+					  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+					  return i;
+				}
+				</script>
+				<script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
+<title>
+    {% block title %} {% endblock %}
+
+</title>
+<div class="top_bg">
+	<div class="container">
+		<div class="header_top-sec">
+			<div class="top_right">
+
+			</div>
+			<div class="top_left">
+				<ul>
+					<li class="top_link">Email:<a href="mailto:info@example.com">mail@example.com</a></li>|
+					<li class="top_link"><a href="login.html">My Account</a></li>
+					<li class="top_link">Date/Time {% current_time %}</li>
+					<li class="top_link"><div id="txt"></div></li>
+				</ul>
+			</div>
+				<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<div class="header-top">
+	 <div class="header-bottom">
+		 <div class="container">
+				<div class="logo">
+					<a href="/"><h1>My Blog</h1></a>
+				</div>
+			 <!---->
+
+			 <div class="top-nav">
+				<ul class="memenu skyblue"><li class="active"><a href="/">Home</a></li>
+					<li class="grid"><a href="/about-us">About Us</a>
+
+					</li>
+					<li class="grid"><a href="/blog-entries">Blog Entries</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+
+										<ul>
+											{% fetch_blogentries %}
+
+										</ul>
+								</div>
+
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="/new-registration">Signup</a></li>
+					<li class="grid"><a href="{% url 'meralogin' %}">Login</a></li>
+					<li class="grid"><a href="{% url 'contactus' %}">Contact Us</a></li>
+				</ul>
+				<div class="clearfix"> </div>
+			 </div>
+			 <!---->
+
+
+			 <!---->
+			 </div>
+			<div class="clearfix"> </div>
+	  </div>
+</div>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<!---->
+<body onload="startTime()">
+
+        {% block content %}
+        {% endblock %}
+
+
+			<div class="footer">
+			 <div class="container">
+				 <div class="ftr-grids">
+					 <div class="col-md-3 ftr-grid">
+						 <h4>About Us</h4>
+
+					 </div>
+					 <div class="col-md-3 ftr-grid">
+						 <h4>Customer service</h4>
+
+					 </div>
+					 <div class="col-md-3 ftr-grid">
+						 <h4>Your account</h4>
+
+					 </div>
+
+					 <div class="clearfix"></div>
+				 </div>
+			 </div>
+		</div>
+		<!---->
+ 		<div class="copywrite">
+	 		<div class="container">
+				 <p>Copyright © 2018 MyBlog.com. All Rights Reserved | Design by GTB Computers</p>
+			 </div>
+		</div>
+
+</body>
+</html>
